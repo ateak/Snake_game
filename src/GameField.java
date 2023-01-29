@@ -58,11 +58,17 @@ public class GameField extends JPanel implements ActionListener{
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        if(inGame){
+        if (inGame){
             g.drawImage(apple,appleX,appleY,this);
             for (int i = 0; i < dots; i++) {
                 g.drawImage(dot,x[i],y[i],this);
             }
+        } else {
+            String str = "Game Over";
+            //Font f = new Font("Arial", 14, Font.BOLD);
+            g.setColor(Color.white);
+            //g.setFont(f);
+            g.drawString(str, 125, SIZE/2);
         }
     }
 
